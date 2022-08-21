@@ -1,0 +1,33 @@
+if hexo-config('css_prefix')
+  @import 'nib'
+
+@import '_third-party/normalize.min.css'
+// project
+@import 'var'
+@import '_global/*'
+@import '_highlight/highlight'
+@import '_page/*'
+@import '_layout/*'
+@import '_tags/*'
+@import '_mode/*'
+
+// search
+if hexo-config('algolia_search.enable')
+  @import '_search/index'
+  @import '_search/algolia'
+
+if hexo-config('local_search') && hexo-config('local_search.enable')
+  @import '_search/index'
+  @import '_search/local-search'
+
+//default color:
+//:root
+//  --card-bg: rgba(255,255,255,0.333)
+//:root
+//  --card-box-shadow: saturate(180%) blur(20px)
+//  --card-hover-box-shadow: saturate(180%) blur(20px)
+//[data-theme="dark"]
+//  --card-bg: rgba(255,255,255,0.067)
+//[data-theme="dark"]
+//  --card-box-shadow: saturate(180%) blur(20px)
+//  --card-hover-box-shadow: saturate(180%) blur(20px)
