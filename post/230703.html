@@ -1,0 +1,566 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2023面试题前端研发流程遇上chatGPT | 前端攻城狮ZhuoRu</title><meta name="keywords" content="张卓如,chatGPT,前端"><meta name="author" content="ZhuoRu"><meta name="copyright" content="ZhuoRu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="baidu-site-verification" content="code-0ABMo98myg"><meta property="og:type" content="article">
+<meta property="og:title" content="2023面试题前端研发流程遇上chatGPT">
+<meta property="og:url" content="https://webzhuoru.github.io/post/230703.html">
+<meta property="og:site_name" content="前端攻城狮ZhuoRu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://webzhuoru.github.io/img/tab1.png">
+<meta property="article:published_time" content="2023-07-16T16:15:21.029Z">
+<meta property="article:modified_time" content="2023-07-16T16:19:29.502Z">
+<meta property="article:author" content="ZhuoRu">
+<meta property="article:tag" content="web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://webzhuoru.github.io/img/tab1.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://webzhuoru.github.io/post/230703"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: ZhuoRu","link":"链接: ","source":"来源: 前端攻城狮ZhuoRu","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-17 00:19:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/tzy13755126023/BLOG_SOURCE/css/function.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css"  media="defer" onload="this.media='all'"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body><div id="loading-box"><div class="pokeball-back"></div><div class="pokeball-loading"><div class="pokeball" id="pokeball-normal"></div><div class="pokeball" id="pokeball-great"></div><div class="pokeball" id="pokeball-ultra"></div><div class="pokeball" id="pokeball-master"></div><div class="pokeball" id="pokeball-safari"></div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://thirdqq.qlogo.cn/g?b=sdk&amp;nk=2276839311&amp;s=140" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span></a></div><div class="menus_item"><a class="site-page" href="/sponsorWall/"><i class="fa-fw fas fa-images"></i><span> 赞助墙</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/other/"><i class="fa-fw fas fa-coffee"></i><span> Demo</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/tab1.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">前端攻城狮ZhuoRu</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span></a></div><div class="menus_item"><a class="site-page" href="/sponsorWall/"><i class="fa-fw fas fa-images"></i><span> 赞助墙</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/other/"><i class="fa-fw fas fa-coffee"></i><span> Demo</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">2023面试题前端研发流程遇上chatGPT</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-16T16:15:21.029Z" title="发表于 2023-07-17 00:15:21">2023-07-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-16T16:19:29.502Z" title="更新于 2023-07-17 00:19:29">2023-07-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98-chatGPT/">面试题 chatGPT</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">6.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>20分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="2023面试题前端研发流程遇上chatGPT"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前端高频面试题-2023版"><a href="#前端高频面试题-2023版" class="headerlink" title="前端高频面试题 - 2023版"></a>前端高频面试题 - 2023版</h1><h2 id="技术设计"><a href="#技术设计" class="headerlink" title="技术设计"></a>技术设计</h2><h3 id="1、设计文档需要涵盖哪些部分"><a href="#1、设计文档需要涵盖哪些部分" class="headerlink" title="1、设计文档需要涵盖哪些部分?"></a>1、设计文档需要涵盖哪些部分?</h3><p>设计文档需要涵盖以下部分：</p>
+<ol>
+<li><p>项目概述：包括项目的目标、背景、范围、需求和约束条件等。</p>
+</li>
+<li><p>用户界面设计：包括界面的布局、颜色、字体、图标、交互方式等。</p>
+</li>
+<li><p>数据库设计：包括数据库的结构、表的设计、关系、索引等。</p>
+</li>
+<li><p>系统架构设计：包括系统的组成部分、模块划分、接口设计等。</p>
+</li>
+<li><p>系统流程设计：包括系统的流程图、用例图、时序图等。</p>
+</li>
+<li><p>技术选型：包括所选用的技术、框架、库等。</p>
+</li>
+<li><p>安全设计：包括系统的安全性、数据的保护、权限控制等。</p>
+</li>
+<li><p>性能设计：包括系统的性能、负载均衡、缓存等。</p>
+</li>
+<li><p>测试计划：包括测试的方法、测试用例、测试环境等。</p>
+</li>
+<li><p>部署计划：包括系统的部署方式、部署流程、上线计划等。</p>
+</li>
+</ol>
+<h3 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h3><h3 id="1、谈谈-eslint"><a href="#1、谈谈-eslint" class="headerlink" title="1、谈谈 eslint"></a>1、谈谈 eslint</h3><p>ESLint是一个开源的JavaScript代码检查工具，它可以帮助我们在编写代码时发现并修复一些常见的代码错误和潜在的问题。它可以通过配置文件来自定义规则，也可以集成到我们的开发工具中，如编辑器和构建工具。使用ESLint可以提高代码质量和可维护性，减少bug和重构成本。</p>
+<h3 id="2、谈谈-commit-message-规范"><a href="#2、谈谈-commit-message-规范" class="headerlink" title="2、谈谈 commit message 规范"></a>2、谈谈 commit message 规范</h3><p>Commit message 规范是指在代码提交时，按照一定的格式书写提交信息，以便于团队成员更好地理解代码变更的内容和目的。通常包括三个部分：类型、影响范围和简要描述。常见的类型包括 feat（新功能）、fix（修复 bug）、docs（文档更新）、style（样式调整）、refactor（重构代码）、test（测试相关）、chore（构建或工具相关）等。影响范围可以是文件名、模块名、功能模块等。简要描述则是对代码变更的简要概述。规范的 commit message 可以提高代码可读性、可维护性，方便代码审查和版本管理。</p>
+<h2 id="研发协同-Git"><a href="#研发协同-Git" class="headerlink" title="研发协同(Git)"></a>研发协同(Git)</h2><h3 id="1、git-的基本使用方法"><a href="#1、git-的基本使用方法" class="headerlink" title="1、git 的基本使用方法"></a>1、git 的基本使用方法</h3><p>Git的基本使用方法包括以下几个方面：</p>
+<ol>
+<li><p>初始化一个Git仓库：在项目根目录下执行<code>git init</code>命令。</p>
+</li>
+<li><p>添加文件到暂存区：使用<code>git add</code>命令将修改的文件添加到暂存区。</p>
+</li>
+<li><p>提交代码到本地仓库：使用<code>git commit</code>命令将暂存区的文件提交到本地仓库。</p>
+</li>
+<li><p>查看仓库状态：使用<code>git status</code>命令查看当前仓库的状态。</p>
+</li>
+<li><p>查看提交历史：使用<code>git log</code>命令查看提交历史。</p>
+</li>
+<li><p>创建分支：使用<code>git branch</code>命令创建新的分支。</p>
+</li>
+<li><p>切换分支：使用<code>git checkout</code>命令切换到指定的分支。</p>
+</li>
+<li><p>合并分支：使用<code>git merge</code>命令将指定分支合并到当前分支。</p>
+</li>
+<li><p>拉取远程仓库代码：使用<code>git pull</code>命令从远程仓库拉取最新代码。</p>
+</li>
+<li><p>推送本地代码到远程仓库：使用<code>git push</code>命令将本地代码推送到远程仓库。</p>
+</li>
+</ol>
+<p>以上是Git的基本使用方法，掌握这些命令可以完成日常的代码管理工作。</p>
+<h3 id="2、git-工作流程"><a href="#2、git-工作流程" class="headerlink" title="2、git 工作流程"></a>2、git 工作流程</h3><p>Git工作流程是指在团队协作开发中，如何使用Git进行版本控制和协作开发的一套规范流程。常见的Git工作流程有以下几种：</p>
+<ol>
+<li><p>集中式工作流程：所有开发者都向同一个中央仓库提交代码，适用于小型团队或个人开发。</p>
+</li>
+<li><p>功能分支工作流程：每个功能开发都在独立的分支上进行，开发完成后合并到主分支，适用于中型团队或大型项目。</p>
+</li>
+<li><p>Gitflow工作流程：在功能分支工作流程的基础上，增加了发布分支和维护分支，适用于大型团队或复杂项目。</p>
+</li>
+<li><p>Forking工作流程：每个开发者都在自己的仓库中进行开发，通过Pull Request向主仓库提交代码，适用于开源项目或跨组织协作开发。</p>
+</li>
+</ol>
+<p>以上是常见的Git工作流程，具体选择哪种工作流程，需要根据团队规模、项目复杂度、开发流程等因素综合考虑。</p>
+<h3 id="3、需要合并别人代码进来"><a href="#3、需要合并别人代码进来" class="headerlink" title="3、需要合并别人代码进来"></a>3、需要合并别人代码进来</h3><p>合并别人代码进来的步骤如下：</p>
+<ol>
+<li><p>首先，将别人的代码仓库添加为远程仓库，使用 <code>git remote add</code> 命令。</p>
+</li>
+<li><p>然后，从远程仓库拉取代码，使用 <code>git fetch</code> 命令。</p>
+</li>
+<li><p>接着，将远程分支合并到本地分支，使用 <code>git merge</code> 命令。</p>
+</li>
+<li><p>如果出现冲突，需要手动解决冲突，然后再提交代码。</p>
+</li>
+<li><p>最后，将本地代码推送到远程仓库，使用 <code>git push</code> 命令。</p>
+</li>
+</ol>
+<p>需要注意的是，在合并别人的代码之前，最好先将自己的代码提交并推送到远程仓库，以免出现冲突。同时，也要确保自己的代码与别人的代码没有冲突。</p>
+<h3 id="4、需要切换分支"><a href="#4、需要切换分支" class="headerlink" title="4、需要切换分支"></a>4、需要切换分支</h3><p>要切换分支，可以使用 <code>git checkout</code> 命令，后面跟上要切换到的分支名。例如，要切换到名为 <code>dev</code> 的分支，可以使用以下命令：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout dev</span><br></pre></td></tr></table></figure>
+<p>如果当前分支有未提交的更改，需要先提交或者撤销更改后再切换分支。</p>
+<h3 id="5、我们如何使用-git-和开源的码云或-github-上面的远端仓库的项目进行工作呢"><a href="#5、我们如何使用-git-和开源的码云或-github-上面的远端仓库的项目进行工作呢" class="headerlink" title="5、我们如何使用 git 和开源的码云或 github 上面的远端仓库的项目进行工作呢"></a>5、我们如何使用 git 和开源的码云或 github 上面的远端仓库的项目进行工作呢</h3><p>我们可以通过以下步骤使用 git 和开源的码云或 GitHub 上面的远端仓库的项目进行工作：</p>
+<ol>
+<li><p>克隆远端仓库到本地：使用 git clone 命令将远端仓库克隆到本地。</p>
+</li>
+<li><p>创建分支：使用 git branch 命令创建一个新的分支，以便我们可以在不影响主分支的情况下进行开发。</p>
+</li>
+<li><p>切换分支：使用 git checkout 命令切换到新创建的分支。</p>
+</li>
+<li><p>进行开发：在新创建的分支上进行开发，并使用 git add 和 git commit 命令将更改提交到本地仓库。</p>
+</li>
+<li><p>推送到远端仓库：使用 git push 命令将本地分支推送到远端仓库。</p>
+</li>
+<li><p>提交合并请求：在远端仓库上创建一个合并请求，请求将我们的更改合并到主分支中。</p>
+</li>
+<li><p>处理反馈：如果合并请求被拒绝或需要更改，我们可以在本地分支上进行更改并再次提交。</p>
+</li>
+<li><p>合并到主分支：一旦合并请求被接受，我们可以将更改合并到主分支中，以便其他人可以访问我们的更改。</p>
+</li>
+</ol>
+<h3 id="6、git、github、gitlab-三者之间的联系以及区别"><a href="#6、git、github、gitlab-三者之间的联系以及区别" class="headerlink" title="6、git、github、gitlab 三者之间的联系以及区别"></a>6、git、github、gitlab 三者之间的联系以及区别</h3><p>Git 是一款分布式版本控制系统，可以帮助我们管理代码的版本。GitHub 和 GitLab 都是基于 Git 的代码托管平台，提供了代码仓库、版本控制、协作开发等功能。其中，GitHub 是最大的开源社区，主要面向个人和开源项目，而 GitLab 则更多地面向企业和团队协作。此外，GitLab 还提供了 CI/CD、容器等功能。总的来说，Git 是版本控制工具，而 GitHub 和 GitLab 则是基于 Git 的代码托管平台，提供了更多的协作和管理功能。</p>
+<h3 id="7、github-和码云的区别"><a href="#7、github-和码云的区别" class="headerlink" title="7、github 和码云的区别"></a>7、github 和码云的区别</h3><p>GitHub 和码云都是基于 Git 的代码托管平台，都提供了代码仓库、版本控制、协作开发、问题追踪等功能。它们的主要区别在于：</p>
+<ol>
+<li>地域：GitHub 总部在美国，码云总部在中国，因此在国内访问码云速度更快。</li>
+<li>用户群体：GitHub 的用户主要是国外的开发者，码云的用户主要是国内的开发者。</li>
+<li>功能：码云相对于 GitHub 增加了一些针对中国用户的功能，比如 Gitee Pages、码云 GVP、码云云构建等。</li>
+<li>开源：GitHub 上的大部分项目都是开源的，而码云上的项目则有很多是私有的。</li>
+</ol>
+<p>总的来说，GitHub 更适合国外的开发者，码云更适合国内的开发者。</p>
+<h3 id="8、提交时发生冲突，你能解释冲突是如何产生的吗-你是如何解决的"><a href="#8、提交时发生冲突，你能解释冲突是如何产生的吗-你是如何解决的" class="headerlink" title="8、提交时发生冲突，你能解释冲突是如何产生的吗? 你是如何解决的"></a>8、提交时发生冲突，你能解释冲突是如何产生的吗? 你是如何解决的</h3><p>提交时发生冲突是因为两个或多个人在同一文件的同一部分进行了修改，Git 无法自动决定应该保留哪个修改。解决冲突的方法是手动编辑文件，选择要保留的修改，然后再次提交。通常的做法是使用 Git 提供的合并工具来解决冲突，如使用 <code>git mergetool</code> 命令打开合并工具进行手动合并。如果无法解决冲突，可以考虑与其他人协商，或者撤销本次提交并重新开始。</p>
+<h3 id="9、如果本次提交误操作，如何撤销"><a href="#9、如果本次提交误操作，如何撤销" class="headerlink" title="9、如果本次提交误操作，如何撤销"></a>9、如果本次提交误操作，如何撤销</h3><p>可以使用 git reset 命令来撤销本次提交，具体操作如下：</p>
+<ol>
+<li><p>使用 git log 命令查看提交记录，找到需要撤销的提交的 commit id。</p>
+</li>
+<li><p>使用 git reset 命令，将 HEAD 指针指向需要撤销的提交的前一个提交。</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset <span class="variable constant_">HEAD</span>^</span><br></pre></td></tr></table></figure>
+<p>如果需要撤销多个提交，可以使用以下命令：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset <span class="variable constant_">HEAD</span>~n </span><br></pre></td></tr></table></figure>
+<h3 id="10、git-修改提交的历史信息"><a href="#10、git-修改提交的历史信息" class="headerlink" title="10、git 修改提交的历史信息"></a>10、git 修改提交的历史信息</h3><p>使用 git 的 rebase 命令可以修改提交的历史信息。具体步骤为：使用 git rebase -i 命令打开交互式 rebase 编辑器，选择需要修改的提交，将 pick 命令改为 edit，保存并退出编辑器。然后使用 git commit —amend 命令修改提交信息，最后使用 git rebase —continue 命令完成修改。需要注意的是，修改提交历史信息会改变提交的哈希值，因此需要谨慎操作。</p>
+<h3 id="11、如何删除-github-和-gitlab-上的文件夹"><a href="#11、如何删除-github-和-gitlab-上的文件夹" class="headerlink" title="11、如何删除 github 和 gitlab 上的文件夹"></a>11、如何删除 github 和 gitlab 上的文件夹</h3><p>要删除 Github 和 Gitlab 上的文件夹，可以通过以下步骤实现：</p>
+<ol>
+<li>打开仓库并进入要删除的文件夹。</li>
+<li>点击页面右上角的“Settings”选项。</li>
+<li>在“Danger Zone”下找到“Delete this repository”或“Delete this project”选项。</li>
+<li>输入要删除的文件夹名称以确认删除操作。</li>
+<li>点击“Delete”按钮以完成删除操作。</li>
+</ol>
+<p>需要注意的是，删除操作是不可逆的，因此在进行删除操作前，请确保已备份好重要的文件和数据。</p>
+<h3 id="12、如何查看分支提交的历史记录-查看某个文件的历史记录呢"><a href="#12、如何查看分支提交的历史记录-查看某个文件的历史记录呢" class="headerlink" title="12、如何查看分支提交的历史记录? 查看某个文件的历史记录呢"></a>12、如何查看分支提交的历史记录? 查看某个文件的历史记录呢</h3><p>要查看分支提交的历史记录，可以使用 git log 命令。该命令会显示分支的每个提交记录，包括提交的哈希值、作者、提交时间、提交信息等。</p>
+<p>要查看某个文件的历史记录，可以使用 git log 命令加上文件路径参数。例如，要查看 index.html 文件的历史记录，可以使用命令 git log index.html。该命令会显示该文件的每个提交记录，包括提交的哈希值、作者、提交时间、提交信息等。</p>
+<h3 id="13、git-跟-svn-有什么区别"><a href="#13、git-跟-svn-有什么区别" class="headerlink" title="13、git 跟 svn 有什么区别"></a>13、git 跟 svn 有什么区别</h3><p>Git 和 SVN 都是版本控制工具，但它们有以下区别：</p>
+<ol>
+<li><p>分布式 vs 集中式：Git 是一种分布式版本控制系统，每个开发者都有一份完整的代码仓库，可以在本地进行版本控制和提交。而 SVN 是一种集中式版本控制系统，所有的代码都保存在中央仓库中，开发者需要从中央仓库中获取代码并提交修改。</p>
+</li>
+<li><p>分支管理：Git 的分支管理非常方便，可以轻松地创建、合并和删除分支。而 SVN 的分支管理比较麻烦，需要手动创建分支，并且合并分支时可能会出现冲突。</p>
+</li>
+<li><p>性能：Git 的性能比 SVN 更好，因为 Git 可以在本地进行版本控制和提交，不需要频繁地与中央仓库进行通信。</p>
+</li>
+<li><p>安全性：Git 的安全性比 SVN 更好，因为 Git 使用 SHA-1 算法对每个提交进行哈希，可以保证代码的完整性和安全性。</p>
+</li>
+</ol>
+<p>总之，Git 更适合分布式团队协作和大型项目管理，而 SVN 更适合集中式团队协作和小型项目管理。</p>
+<h3 id="14、我们在本地工程常会修改一些配置文件，这些文件不需要被提交，而我们又不想每次执行-it-status-时都让这些文件显示出来，我们该如何操作"><a href="#14、我们在本地工程常会修改一些配置文件，这些文件不需要被提交，而我们又不想每次执行-it-status-时都让这些文件显示出来，我们该如何操作" class="headerlink" title="14、我们在本地工程常会修改一些配置文件，这些文件不需要被提交，而我们又不想每次执行 it status 时都让这些文件显示出来，我们该如何操作?"></a>14、我们在本地工程常会修改一些配置文件，这些文件不需要被提交，而我们又不想每次执行 it status 时都让这些文件显示出来，我们该如何操作?</h3><p>可以在项目根目录下创建一个名为 .gitignore 的文件，将不需要被提交的文件或文件夹名称写入该文件中，这样 git 就会忽略这些文件或文件夹的变化，不会在 it status 中显示出来。</p>
+<h3 id="15、git-fetch-和-git-merge-和-git-pull-的区别"><a href="#15、git-fetch-和-git-merge-和-git-pull-的区别" class="headerlink" title="15、git fetch 和 git merge 和 git pull 的区别"></a>15、git fetch 和 git merge 和 git pull 的区别</h3><p>git fetch 会将远程仓库的最新代码拉取到本地，但不会自动合并到当前分支，需要手动执行 git merge 或 git rebase 进行合并。</p>
+<p>git merge 会将指定分支的代码合并到当前分支，如果有冲突需要手动解决。</p>
+<p>git pull 相当于 git fetch 和 git merge 的组合，会自动拉取远程仓库的最新代码并合并到当前分支。</p>
+<h3 id="16、如何把本地仓库的内容推向一个空的远程仓库"><a href="#16、如何把本地仓库的内容推向一个空的远程仓库" class="headerlink" title="16、如何把本地仓库的内容推向一个空的远程仓库"></a>16、如何把本地仓库的内容推向一个空的远程仓库</h3><p>可以通过以下步骤把本地仓库的内容推向一个空的远程仓库：</p>
+<ol>
+<li>在远程仓库中创建一个新的空仓库。</li>
+<li>在本地仓库中使用 git remote add 命令添加远程仓库地址。</li>
+<li>使用 git push 命令将本地仓库的内容推送到远程仓库。</li>
+</ol>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h3 id="1、单元测试如何做"><a href="#1、单元测试如何做" class="headerlink" title="1、单元测试如何做?"></a>1、单元测试如何做?</h3><p>单元测试是一种测试方法，用于测试代码的最小单元——函数或方法。以下是单元测试的一般步骤：</p>
+<ol>
+<li>选择一个测试框架，如Jest、Mocha、Karma等。</li>
+<li>编写测试用例，包括输入数据、预期输出和测试代码。</li>
+<li>运行测试用例，检查实际输出是否与预期输出一致。</li>
+<li>分析测试结果，修复代码中的错误。</li>
+<li>重复执行步骤2-4，直到所有测试用例都通过为止。</li>
+</ol>
+<p>单元测试可以帮助开发人员及时发现代码中的错误，提高代码质量和可维护性。</p>
+<h3 id="2、如何解决联调依赖问题"><a href="#2、如何解决联调依赖问题" class="headerlink" title="2、如何解决联调依赖问题?"></a>2、如何解决联调依赖问题?</h3><p>联调依赖问题通常可以通过以下几种方式来解决：</p>
+<ol>
+<li><p>使用模拟数据：在开发过程中，可以使用模拟数据来模拟接口返回的数据，从而避免依赖后端接口的情况。</p>
+</li>
+<li><p>使用 mock 数据：可以使用 mock 数据来模拟后端接口的返回数据，从而避免依赖后端接口的情况。</p>
+</li>
+<li><p>使用代理服务器：可以使用代理服务器来代理后端接口，从而避免跨域问题和依赖后端接口的情况。</p>
+</li>
+<li><p>使用测试环境：在联调过程中，可以使用测试环境来模拟生产环境，从而避免对生产环境的依赖。</p>
+</li>
+</ol>
+<h3 id="3、提测阶段bug-和-线上bug-解决过程有和区别"><a href="#3、提测阶段bug-和-线上bug-解决过程有和区别" class="headerlink" title="3、提测阶段bug 和 线上bug 解决过程有和区别?"></a>3、提测阶段bug 和 线上bug 解决过程有和区别?</h3><p>提测阶段的bug和线上bug解决过程有以下区别：</p>
+<ol>
+<li><p>优先级不同：提测阶段的bug优先级相对较高，需要在发布前解决，而线上bug则需要根据影响程度和紧急程度来确定优先级。</p>
+</li>
+<li><p>定位难度不同：提测阶段的bug通常可以通过日志和调试工具来定位，而线上bug则需要更加敏锐的观察和分析，可能需要使用线上调试工具和监控系统。</p>
+</li>
+<li><p>影响范围不同：提测阶段的bug通常只影响测试环境，而线上bug则可能会影响到大量用户，需要及时处理。</p>
+</li>
+<li><p>解决时间不同：提测阶段的bug通常需要在发布前解决，而线上bug则需要在最短时间内解决，以减少用户的影响。</p>
+</li>
+</ol>
+<p>因此，在解决提测阶段的bug和线上bug时，需要根据不同的情况采取不同的策略和方法，以保证问题能够得到及时解决。</p>
+<h2 id="发布上线"><a href="#发布上线" class="headerlink" title="发布上线"></a>发布上线</h2><h3 id="1、流水线如何搭建"><a href="#1、流水线如何搭建" class="headerlink" title="1、流水线如何搭建"></a>1、流水线如何搭建</h3><p>发布上线的流水线搭建可以分为以下几个步骤：</p>
+<ol>
+<li><p>代码仓库：使用 Git 管理代码，建立一个代码仓库。</p>
+</li>
+<li><p>自动化构建：使用工具如 Jenkins、Travis CI 等，建立自动化构建流程，包括编译、打包、测试等。</p>
+</li>
+<li><p>镜像仓库：使用 Docker 等工具，建立镜像仓库，将构建好的应用程序打包成镜像。</p>
+</li>
+<li><p>自动化部署：使用工具如 Kubernetes、Docker Swarm 等，建立自动化部署流程，将镜像部署到生产环境。</p>
+</li>
+<li><p>监控和日志：使用工具如 ELK、Prometheus 等，建立监控和日志系统，监控应用程序的运行状态和日志输出。</p>
+</li>
+<li><p>自动化回滚：建立自动化回滚流程，当应用程序出现问题时，自动回滚到上一个版本。</p>
+</li>
+</ol>
+<p>通过以上步骤，可以建立一个完整的发布上线流水线，实现快速、高效、可靠的应用程序发布。</p>
+<h3 id="2、对-Docker-理解"><a href="#2、对-Docker-理解" class="headerlink" title="2、对 Docker 理解"></a>2、对 Docker 理解</h3><p>Docker 是一种容器化技术，可以将应用程序及其依赖项打包到一个可移植的容器中，使得应用程序可以在任何环境中运行。Docker 容器可以在不同的操作系统、云平台和硬件上运行，具有高度的可移植性和灵活性。Docker 还提供了一套完整的工具链，包括 Docker Engine、Docker Compose、Docker Swarm 等，可以方便地管理和部署容器化应用程序。Docker 技术在 DevOps、云计算、微服务等领域得到了广泛的应用。</p>
+<h3 id="3、pm2-与-docker-有何区别"><a href="#3、pm2-与-docker-有何区别" class="headerlink" title="3、pm2 与 docker 有何区别?"></a>3、pm2 与 docker 有何区别?</h3><p>PM2 是一个进程管理工具，可以帮助我们管理 Node.js 进程，包括启动、停止、重启、监控等功能。而 Docker 是一个容器化平台，可以将应用程序及其依赖项打包成一个独立的容器，使得应用程序可以在任何环境中运行，且不受环境差异的影响。</p>
+<p>具体来说，PM2 只是一个进程管理工具，它可以帮助我们管理 Node.js 进程，但是它并不能解决应用程序在不同环境中运行的问题。而 Docker 则可以将应用程序及其依赖项打包成一个独立的容器，使得应用程序可以在任何环境中运行，且不受环境差异的影响。因此，Docker 更适合用于构建和部署应用程序，而 PM2 更适合用于管理应用程序的运行。</p>
+<h2 id="Nodejs"><a href="#Nodejs" class="headerlink" title="Nodejs"></a>Nodejs</h2><h3 id="1、对-Node-js-有没有了解，它有什么特点，适合做什么业务"><a href="#1、对-Node-js-有没有了解，它有什么特点，适合做什么业务" class="headerlink" title="1、对 Node.js 有没有了解，它有什么特点，适合做什么业务"></a>1、对 Node.js 有没有了解，它有什么特点，适合做什么业务</h3><p>Node.js是一个基于Chrome V8引擎的JavaScript运行环境，它具有事件驱动、非阻塞I/O等特点，适合处理高并发、I/O密集型的业务，如Web服务器、API服务器、实时通讯服务器等。Node.js还有丰富的第三方模块和工具，可以快速构建高效、可扩展的应用程序。</p>
+<h3 id="2、Node-和-前端项目怎么解决跨域的"><a href="#2、Node-和-前端项目怎么解决跨域的" class="headerlink" title="2、Node 和 前端项目怎么解决跨域的"></a>2、Node 和 前端项目怎么解决跨域的</h3><p>可以通过以下几种方式解决跨域问题：</p>
+<ol>
+<li><p>代理：在前端项目中，通过配置代理服务器来转发请求，使得请求不再跨域。</p>
+</li>
+<li><p>JSONP：利用 script 标签的 src 属性不受同源策略限制的特点，将请求转换为 script 标签的 src 属性，服务器返回的数据需要包裹在一个函数调用中，前端通过该函数获取数据。</p>
+</li>
+<li><p>CORS：在服务端设置响应头 Access-Control-Allow-Origin，允许指定的域名访问该资源。</p>
+</li>
+<li><p>postMessage：在前端页面中使用 postMessage 方法向目标页面发送消息，目标页面通过监听 message 事件获取消息，从而实现跨域通信。</p>
+</li>
+</ol>
+<h3 id="3、Node-的优点是什么-缺点是什么"><a href="#3、Node-的优点是什么-缺点是什么" class="headerlink" title="3、Node 的优点是什么? 缺点是什么"></a>3、Node 的优点是什么? 缺点是什么</h3><p>Node 的优点包括：</p>
+<ol>
+<li><p>高效性：Node.js 使用了事件驱动、非阻塞 I/O 模型，使得它可以处理大量并发连接，具有很高的性能表现。</p>
+</li>
+<li><p>跨平台：Node.js 可以在多个操作系统上运行，包括 Windows、Linux、Mac OS 等。</p>
+</li>
+<li><p>社区支持：Node.js 有一个庞大的社区，提供了大量的模块和工具，可以帮助开发者快速构建应用程序。</p>
+</li>
+<li><p>前后端一体化：Node.js 可以用于构建前端和后端应用程序，使得前后端可以使用同一种语言和技术栈，提高了开发效率。</p>
+</li>
+</ol>
+<p>Node 的缺点包括：</p>
+<ol>
+<li><p>单线程：Node.js 使用单线程模型，如果有一个请求阻塞了事件循环，会导致整个应用程序的性能下降。</p>
+</li>
+<li><p>不适合 CPU 密集型任务：由于 Node.js 使用单线程模型，不适合处理 CPU 密集型任务，因为这会导致事件循环被阻塞，影响整个应用程序的性能。</p>
+</li>
+<li><p>回调地狱：由于 Node.js 使用回调函数处理异步操作，如果嵌套过多，会导致代码难以维护，出现回调地狱的情况。</p>
+</li>
+</ol>
+<h3 id="4、commonJS-中的-require-exports-和-ES6-中import-expot-的区别是什么"><a href="#4、commonJS-中的-require-exports-和-ES6-中import-expot-的区别是什么" class="headerlink" title="4、commonJS 中的 require/exports 和 ES6 中import/expot 的区别是什么"></a>4、commonJS 中的 require/exports 和 ES6 中import/expot 的区别是什么</h3><p>commonJS 中的 require/exports 和 ES6 中 import/export 的区别如下：</p>
+<ol>
+<li><p>语法不同：require/exports 是 commonJS 的模块化规范，而 import/export 是 ES6 的模块化规范。</p>
+</li>
+<li><p>加载方式不同：require/exports 是同步加载模块，而 import/export 是异步加载模块。</p>
+</li>
+<li><p>功能不同：require/exports 只能导出一个对象，而 import/export 可以导出多个对象。</p>
+</li>
+<li><p>静态分析不同：import/export 可以进行静态分析，可以在编译时就确定模块的依赖关系，而 require/exports 只能在运行时确定依赖关系。</p>
+</li>
+<li><p>作用域不同：require/exports 的作用域是模块级别的，而 import/export 的作用域是块级别的。</p>
+</li>
+</ol>
+<p>总的来说，ES6 的 import/export 更加灵活、高效、安全，是未来的趋势。</p>
+<h3 id="5、简述同步和异步的区别，如何避免回调地狱，Node-的异步问题是如何解决的"><a href="#5、简述同步和异步的区别，如何避免回调地狱，Node-的异步问题是如何解决的" class="headerlink" title="5、简述同步和异步的区别，如何避免回调地狱，Node 的异步问题是如何解决的"></a>5、简述同步和异步的区别，如何避免回调地狱，Node 的异步问题是如何解决的</h3><p>同步和异步的区别：同步是指代码按照顺序执行，必须等待前面的代码执行完毕才能执行后面的代码；异步是指代码不按照顺序执行，可以在前面的代码没有执行完毕的情况下执行后面的代码。</p>
+<p>避免回调地狱的方法：可以使用Promise、async/await等方式来避免回调地狱。</p>
+<p>Node的异步问题解决方法：Node使用了事件循环机制来解决异步问题，通过将异步任务交给事件循环处理，避免了阻塞主线程的情况。同时，Node也提供了一些异步API，如fs.readFile等，来方便开发者进行异步编程。</p>
+<h3 id="6、dependencies-和-devDependencies-两者区别"><a href="#6、dependencies-和-devDependencies-两者区别" class="headerlink" title="6、dependencies 和 devDependencies 两者区别"></a>6、dependencies 和 devDependencies 两者区别</h3><p>在 Node.js 的 package.json 文件中，dependencies 和 devDependencies 两者都是用来声明项目所依赖的包，但是它们之间有一个重要的区别。dependencies 中声明的包是项目运行时必须要依赖的包，而 devDependencies 中声明的包则是开发时需要用到的包，比如测试框架、打包工具等等。在项目部署时，devDependencies 中声明的包不会被安装，只有 dependencies 中声明的包才会被安装。这样可以减少项目部署时的包体积，提高部署效率。</p>
+<h3 id="7、描述一下从接到-url-开始，到逻辑处理，到DB查询，到返回结果，整个过程是怎么处理的"><a href="#7、描述一下从接到-url-开始，到逻辑处理，到DB查询，到返回结果，整个过程是怎么处理的" class="headerlink" title="7、描述一下从接到 url 开始，到逻辑处理，到DB查询，到返回结果，整个过程是怎么处理的?"></a>7、描述一下从接到 url 开始，到逻辑处理，到DB查询，到返回结果，整个过程是怎么处理的?</h3><p>从接到 URL 开始，整个过程如下：</p>
+<ol>
+<li>浏览器发送 HTTP 请求到服务器。</li>
+<li>服务器接收请求，解析 URL，找到对应的路由和处理函数。</li>
+<li>处理函数根据业务逻辑进行处理，可能需要从数据库中查询数据。</li>
+<li>处理函数将处理结果返回给服务器。</li>
+<li>服务器将处理结果封装成 HTTP 响应，发送给浏览器。</li>
+<li>浏览器接收到响应，根据响应头和响应体进行处理，可能需要渲染页面。</li>
+</ol>
+<p>在这个过程中，可能会有一些中间件对请求进行处理，例如解析请求体、处理跨域等。同时，为了提高性能，可能会使用缓存、CDN 等技术。</p>
+<h3 id="8、谈谈你对-Koa-和-Express-的理解，二者的区别是"><a href="#8、谈谈你对-Koa-和-Express-的理解，二者的区别是" class="headerlink" title="8、谈谈你对 Koa 和 Express 的理解，二者的区别是?"></a>8、谈谈你对 Koa 和 Express 的理解，二者的区别是?</h3><p>Koa 和 Express 都是 Node.js 的 Web 框架，用于构建 Web 应用程序。它们的主要区别在于它们的设计哲学和实现方式。Express 是一个功能丰富的框架，提供了大量的中间件和插件，可以快速构建 Web 应用程序。而 Koa 的设计哲学是更加轻量级和模块化，它提供了更少的中间件和插件，但是可以通过自定义中间件来实现更加灵活的功能。此外，Koa 使用了 ES6 的 async/await 特性来处理异步操作，使得代码更加简洁易懂。</p>
+<h3 id="9、谈谈对-egg-和-nest-js-的理解，二者的区别是"><a href="#9、谈谈对-egg-和-nest-js-的理解，二者的区别是" class="headerlink" title="9、谈谈对 egg 和 nest.js 的理解，二者的区别是?"></a>9、谈谈对 egg 和 nest.js 的理解，二者的区别是?</h3><p>Egg 和 Nest.js 都是基于 Node.js 的 Web 框架，但是 Egg 是基于 Express 的，而 Nest.js 则是基于 Express 或 Fastify 的。Egg 更加适合于大型企业级应用的开发，提供了插件机制和约定大于配置的思想，可以快速搭建出高可用、高性能的 Web 应用。Nest.js 则更加注重代码的模块化和可维护性，提供了依赖注入和面向切面编程等特性，可以让开发者更加方便地编写可测试、可扩展的应用。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">ZhuoRu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://webzhuoru.github.io/post/230703.html">https://webzhuoru.github.io/post/230703.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://webzhuoru.github.io" target="_blank">前端攻城狮ZhuoRu</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/web/">web</a></div><div class="post_share"><div class="social-share" data-image="/img/tab1.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/./img/wechat.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/./img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/./img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/./img/alipay.jpg" alt="支付寶"/></a><div class="post-qr-code-desc">支付寶</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/230703.html"><img class="prev-cover" data-lazy-src="/img/tab5.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">2023面试题前端优化遇上chatGPT</div></div></a></div><div class="next-post pull-right"><a href="/post/230702.html"><img class="next-cover" data-lazy-src="/img/tab2.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2023面试题前端三剑客遇上chatGPT</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/16106.html" title="填坑录"><img class="cover" data-lazy-src="/img/tab4.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-06</div><div class="title">填坑录</div></div></a></div><div><a href="/post/16107.html" title="Butterfly启动说明书"><img class="cover" data-lazy-src="/img/tab1.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-27</div><div class="title">Butterfly启动说明书</div></div></a></div><div><a href="/post/17765.html" title="2月份面试题总结"><img class="cover" data-lazy-src="/img/tab3.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-02-10</div><div class="title">2月份面试题总结</div></div></a></div><div><a href="/post/16199.html" title="2023面试题总结"><img class="cover" data-lazy-src="/img/tab4.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-06</div><div class="title">2023面试题总结</div></div></a></div><div><a href="/post/230702.html" title="2023面试题前端三剑客遇上chatGPT"><img class="cover" data-lazy-src="/img/tab2.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-17</div><div class="title">2023面试题前端三剑客遇上chatGPT</div></div></a></div><div><a href="/post/230701.html" title="2023面试题前端框架遇上chatGPT"><img class="cover" data-lazy-src="/img/tab4.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-17</div><div class="title">2023面试题前端框架遇上chatGPT</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://thirdqq.qlogo.cn/g?b=sdk&amp;nk=2276839311&amp;s=140" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">ZhuoRu</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/WebZhuoRu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/WebZhuoRu" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2276839311@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://webzhuoru.github.io/" target="_blank" title="博客"><i class="fa-solid fa-book-skull"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-2023%E7%89%88"><span class="toc-number">1.</span> <span class="toc-text">前端高频面试题 - 2023版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.1.</span> <span class="toc-text">技术设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E8%AE%BE%E8%AE%A1%E6%96%87%E6%A1%A3%E9%9C%80%E8%A6%81%E6%B6%B5%E7%9B%96%E5%93%AA%E4%BA%9B%E9%83%A8%E5%88%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">1、设计文档需要涵盖哪些部分?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83"><span class="toc-number">1.1.2.</span> <span class="toc-text">代码规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E8%B0%88%E8%B0%88-eslint"><span class="toc-number">1.1.3.</span> <span class="toc-text">1、谈谈 eslint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E8%B0%88%E8%B0%88-commit-message-%E8%A7%84%E8%8C%83"><span class="toc-number">1.1.4.</span> <span class="toc-text">2、谈谈 commit message 规范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%94%E5%8F%91%E5%8D%8F%E5%90%8C-Git"><span class="toc-number">1.2.</span> <span class="toc-text">研发协同(Git)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81git-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">1、git 的基本使用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81git-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">2、git 工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E9%9C%80%E8%A6%81%E5%90%88%E5%B9%B6%E5%88%AB%E4%BA%BA%E4%BB%A3%E7%A0%81%E8%BF%9B%E6%9D%A5"><span class="toc-number">1.2.3.</span> <span class="toc-text">3、需要合并别人代码进来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%E9%9C%80%E8%A6%81%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="toc-number">1.2.4.</span> <span class="toc-text">4、需要切换分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81%E6%88%91%E4%BB%AC%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-git-%E5%92%8C%E5%BC%80%E6%BA%90%E7%9A%84%E7%A0%81%E4%BA%91%E6%88%96-github-%E4%B8%8A%E9%9D%A2%E7%9A%84%E8%BF%9C%E7%AB%AF%E4%BB%93%E5%BA%93%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E5%B7%A5%E4%BD%9C%E5%91%A2"><span class="toc-number">1.2.5.</span> <span class="toc-text">5、我们如何使用 git 和开源的码云或 github 上面的远端仓库的项目进行工作呢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E3%80%81git%E3%80%81github%E3%80%81gitlab-%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E8%81%94%E7%B3%BB%E4%BB%A5%E5%8F%8A%E5%8C%BA%E5%88%AB"><span class="toc-number">1.2.6.</span> <span class="toc-text">6、git、github、gitlab 三者之间的联系以及区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7%E3%80%81github-%E5%92%8C%E7%A0%81%E4%BA%91%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.2.7.</span> <span class="toc-text">7、github 和码云的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8%E3%80%81%E6%8F%90%E4%BA%A4%E6%97%B6%E5%8F%91%E7%94%9F%E5%86%B2%E7%AA%81%EF%BC%8C%E4%BD%A0%E8%83%BD%E8%A7%A3%E9%87%8A%E5%86%B2%E7%AA%81%E6%98%AF%E5%A6%82%E4%BD%95%E4%BA%A7%E7%94%9F%E7%9A%84%E5%90%97-%E4%BD%A0%E6%98%AF%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E7%9A%84"><span class="toc-number">1.2.8.</span> <span class="toc-text">8、提交时发生冲突，你能解释冲突是如何产生的吗? 你是如何解决的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9%E3%80%81%E5%A6%82%E6%9E%9C%E6%9C%AC%E6%AC%A1%E6%8F%90%E4%BA%A4%E8%AF%AF%E6%93%8D%E4%BD%9C%EF%BC%8C%E5%A6%82%E4%BD%95%E6%92%A4%E9%94%80"><span class="toc-number">1.2.9.</span> <span class="toc-text">9、如果本次提交误操作，如何撤销</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10%E3%80%81git-%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E7%9A%84%E5%8E%86%E5%8F%B2%E4%BF%A1%E6%81%AF"><span class="toc-number">1.2.10.</span> <span class="toc-text">10、git 修改提交的历史信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11%E3%80%81%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4-github-%E5%92%8C-gitlab-%E4%B8%8A%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.2.11.</span> <span class="toc-text">11、如何删除 github 和 gitlab 上的文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12%E3%80%81%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF%E6%8F%90%E4%BA%A4%E7%9A%84%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95-%E6%9F%A5%E7%9C%8B%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E7%9A%84%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95%E5%91%A2"><span class="toc-number">1.2.12.</span> <span class="toc-text">12、如何查看分支提交的历史记录? 查看某个文件的历史记录呢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13%E3%80%81git-%E8%B7%9F-svn-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-number">1.2.13.</span> <span class="toc-text">13、git 跟 svn 有什么区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14%E3%80%81%E6%88%91%E4%BB%AC%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%B7%A5%E7%A8%8B%E5%B8%B8%E4%BC%9A%E4%BF%AE%E6%94%B9%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%8C%E8%BF%99%E4%BA%9B%E6%96%87%E4%BB%B6%E4%B8%8D%E9%9C%80%E8%A6%81%E8%A2%AB%E6%8F%90%E4%BA%A4%EF%BC%8C%E8%80%8C%E6%88%91%E4%BB%AC%E5%8F%88%E4%B8%8D%E6%83%B3%E6%AF%8F%E6%AC%A1%E6%89%A7%E8%A1%8C-it-status-%E6%97%B6%E9%83%BD%E8%AE%A9%E8%BF%99%E4%BA%9B%E6%96%87%E4%BB%B6%E6%98%BE%E7%A4%BA%E5%87%BA%E6%9D%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E8%AF%A5%E5%A6%82%E4%BD%95%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.14.</span> <span class="toc-text">14、我们在本地工程常会修改一些配置文件，这些文件不需要被提交，而我们又不想每次执行 it status 时都让这些文件显示出来，我们该如何操作?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15%E3%80%81git-fetch-%E5%92%8C-git-merge-%E5%92%8C-git-pull-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.2.15.</span> <span class="toc-text">15、git fetch 和 git merge 和 git pull 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16%E3%80%81%E5%A6%82%E4%BD%95%E6%8A%8A%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E7%9A%84%E5%86%85%E5%AE%B9%E6%8E%A8%E5%90%91%E4%B8%80%E4%B8%AA%E7%A9%BA%E7%9A%84%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">1.2.16.</span> <span class="toc-text">16、如何把本地仓库的内容推向一个空的远程仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">1.3.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%A6%82%E4%BD%95%E5%81%9A"><span class="toc-number">1.3.1.</span> <span class="toc-text">1、单元测试如何做?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%81%94%E8%B0%83%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.2.</span> <span class="toc-text">2、如何解决联调依赖问题?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E6%8F%90%E6%B5%8B%E9%98%B6%E6%AE%B5bug-%E5%92%8C-%E7%BA%BF%E4%B8%8Abug-%E8%A7%A3%E5%86%B3%E8%BF%87%E7%A8%8B%E6%9C%89%E5%92%8C%E5%8C%BA%E5%88%AB"><span class="toc-number">1.3.3.</span> <span class="toc-text">3、提测阶段bug 和 线上bug 解决过程有和区别?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF"><span class="toc-number">1.4.</span> <span class="toc-text">发布上线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA"><span class="toc-number">1.4.1.</span> <span class="toc-text">1、流水线如何搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E5%AF%B9-Docker-%E7%90%86%E8%A7%A3"><span class="toc-number">1.4.2.</span> <span class="toc-text">2、对 Docker 理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81pm2-%E4%B8%8E-docker-%E6%9C%89%E4%BD%95%E5%8C%BA%E5%88%AB"><span class="toc-number">1.4.3.</span> <span class="toc-text">3、pm2 与 docker 有何区别?</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nodejs"><span class="toc-number">1.5.</span> <span class="toc-text">Nodejs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81%E5%AF%B9-Node-js-%E6%9C%89%E6%B2%A1%E6%9C%89%E4%BA%86%E8%A7%A3%EF%BC%8C%E5%AE%83%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E7%82%B9%EF%BC%8C%E9%80%82%E5%90%88%E5%81%9A%E4%BB%80%E4%B9%88%E4%B8%9A%E5%8A%A1"><span class="toc-number">1.5.1.</span> <span class="toc-text">1、对 Node.js 有没有了解，它有什么特点，适合做什么业务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81Node-%E5%92%8C-%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E7%9A%84"><span class="toc-number">1.5.2.</span> <span class="toc-text">2、Node 和 前端项目怎么解决跨域的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81Node-%E7%9A%84%E4%BC%98%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88-%E7%BC%BA%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.5.3.</span> <span class="toc-text">3、Node 的优点是什么? 缺点是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81commonJS-%E4%B8%AD%E7%9A%84-require-exports-%E5%92%8C-ES6-%E4%B8%ADimport-expot-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.5.4.</span> <span class="toc-text">4、commonJS 中的 require&#x2F;exports 和 ES6 中import&#x2F;expot 的区别是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81%E7%AE%80%E8%BF%B0%E5%90%8C%E6%AD%A5%E5%92%8C%E5%BC%82%E6%AD%A5%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8C%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%9B%9E%E8%B0%83%E5%9C%B0%E7%8B%B1%EF%BC%8CNode-%E7%9A%84%E5%BC%82%E6%AD%A5%E9%97%AE%E9%A2%98%E6%98%AF%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E7%9A%84"><span class="toc-number">1.5.5.</span> <span class="toc-text">5、简述同步和异步的区别，如何避免回调地狱，Node 的异步问题是如何解决的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E3%80%81dependencies-%E5%92%8C-devDependencies-%E4%B8%A4%E8%80%85%E5%8C%BA%E5%88%AB"><span class="toc-number">1.5.6.</span> <span class="toc-text">6、dependencies 和 devDependencies 两者区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7%E3%80%81%E6%8F%8F%E8%BF%B0%E4%B8%80%E4%B8%8B%E4%BB%8E%E6%8E%A5%E5%88%B0-url-%E5%BC%80%E5%A7%8B%EF%BC%8C%E5%88%B0%E9%80%BB%E8%BE%91%E5%A4%84%E7%90%86%EF%BC%8C%E5%88%B0DB%E6%9F%A5%E8%AF%A2%EF%BC%8C%E5%88%B0%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%EF%BC%8C%E6%95%B4%E4%B8%AA%E8%BF%87%E7%A8%8B%E6%98%AF%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%E7%9A%84"><span class="toc-number">1.5.7.</span> <span class="toc-text">7、描述一下从接到 url 开始，到逻辑处理，到DB查询，到返回结果，整个过程是怎么处理的?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8%E3%80%81%E8%B0%88%E8%B0%88%E4%BD%A0%E5%AF%B9-Koa-%E5%92%8C-Express-%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%8C%E4%BA%8C%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF"><span class="toc-number">1.5.8.</span> <span class="toc-text">8、谈谈你对 Koa 和 Express 的理解，二者的区别是?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9%E3%80%81%E8%B0%88%E8%B0%88%E5%AF%B9-egg-%E5%92%8C-nest-js-%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%8C%E4%BA%8C%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF"><span class="toc-number">1.5.9.</span> <span class="toc-text">9、谈谈对 egg 和 nest.js 的理解，二者的区别是?</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/230703.html" title="2023面试题前端优化遇上chatGPT"><img data-lazy-src="/img/tab5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023面试题前端优化遇上chatGPT"/></a><div class="content"><a class="title" href="/post/230703.html" title="2023面试题前端优化遇上chatGPT">2023面试题前端优化遇上chatGPT</a><time datetime="2023-07-16T16:15:21.029Z" title="发表于 2023-07-17 00:15:21">2023-07-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/230703.html" title="2023面试题前端研发流程遇上chatGPT"><img data-lazy-src="/img/tab1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023面试题前端研发流程遇上chatGPT"/></a><div class="content"><a class="title" href="/post/230703.html" title="2023面试题前端研发流程遇上chatGPT">2023面试题前端研发流程遇上chatGPT</a><time datetime="2023-07-16T16:15:21.029Z" title="发表于 2023-07-17 00:15:21">2023-07-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/230702.html" title="2023面试题前端三剑客遇上chatGPT"><img data-lazy-src="/img/tab2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023面试题前端三剑客遇上chatGPT"/></a><div class="content"><a class="title" href="/post/230702.html" title="2023面试题前端三剑客遇上chatGPT">2023面试题前端三剑客遇上chatGPT</a><time datetime="2023-07-16T16:15:20.585Z" title="发表于 2023-07-17 00:15:20">2023-07-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/230701.html" title="2023面试题前端框架遇上chatGPT"><img data-lazy-src="/img/tab4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023面试题前端框架遇上chatGPT"/></a><div class="content"><a class="title" href="/post/230701.html" title="2023面试题前端框架遇上chatGPT">2023面试题前端框架遇上chatGPT</a><time datetime="2023-07-16T16:15:20.581Z" title="发表于 2023-07-17 00:15:20">2023-07-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/17765.html" title="2月份面试题总结"><img data-lazy-src="/img/tab3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2月份面试题总结"/></a><div class="content"><a class="title" href="/post/17765.html" title="2月份面试题总结">2月份面试题总结</a><time datetime="2023-02-10T09:05:30.835Z" title="发表于 2023-02-10 17:05:30">2023-02-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/16199.html" title="2023面试题总结"><img data-lazy-src="/img/tab4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023面试题总结"/></a><div class="content"><a class="title" href="/post/16199.html" title="2023面试题总结">2023面试题总结</a><time datetime="2023-01-06T06:57:04.576Z" title="发表于 2023-01-06 14:57:04">2023-01-06</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/tab1.png')"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By ZhuoRu</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://wechat-delta.vercel.app/',
+      region: 'ap-guangzhou'
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://wechat-delta.vercel.app/',
+      region: 'ap-guangzhou',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas id="universe"></canvas><div class="aplayer no-destroy" data-id="7592292364" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-loop="all" data-lrctype="0"> </div><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer src="./js/universe.js"></script><script defer src="./js/sun_moon.js"></script><script defer src="https://fastly.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script defer data-pjax src="/js/wow_init.js"></script><script defer src="https://fastly.jsdelivr.net/npm/hexo-theme-volantis@latest/source/js/issues.min.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;post/1026.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="/img/tab4.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/1026.html&quot;);" href="javascript:void(0);" alt="">Vue3学习总结</a><div class="blog-slider__text">前端内卷的开始,Vue3开发上手总结</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;post/1026.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;post/16107.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="/img/tab1.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/16107.html&quot;);" href="javascript:void(0);" alt="">Butterfly启动说明书</a><div class="blog-slider__text">启动说明书</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;post/16107.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;post/1038.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="/img/tab3.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/1038.html&quot;);" href="javascript:void(0);" alt="">css学习总结</a><div class="blog-slider__text">课程目标:1. 学会使用CSS选择器2. 熟记CSS样式和外观属性3. 熟练掌握CSS各种选择器4. 熟练掌握CSS各种选择器5. 熟练掌握CSS三种显示模式6. 熟练掌握CSS背景属性7. 熟练掌握CSS三大特性8. 熟练掌握CSS盒子模型9. 熟练掌握CSS浮动10.熟练掌握CSS定位11.熟练掌握CSS高级技巧强化CSS</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;post/1038.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;post/2020715.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="/img/tab4.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;post/2020715.html&quot;);" href="javascript:void(0);" alt="">html学习总结</a><div class="blog-slider__text">学习目标:了解常用浏览器;掌握WEB标准;理解标签语义化;掌握常用的排版标签;掌握常用的文本格式化图像链接等标签;掌握三种列表标签;掌握表格标签;掌握表格标签;掌握表单标签</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;post/2020715.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
